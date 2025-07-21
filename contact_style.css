@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+:root {
+  --text-color: white;
+  --theme-color: rgb(87 219 161);
+}
+
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  top: 0;
+  position: sticky;
+  border-bottom: 2px solid white;
+  z-index: 1;
+}
+
+nav .name {
+  font-size: xX-large;
+  margin-left: 20px;
+  font-family: Arizonia;
+}
+
+.name span {
+  color: var(--theme-color);
+}
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a:hover {
+  background-color: var(--theme-color);
+  color: black;
+}
+
+nav ul li .contact{
+    background-color: var(--theme-color);
+    color: black;
+}
+
+nav ul li a {
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+nav .navdetails {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.icon {
+  display: flex;
+  position: relative;
+  display: none;
+
+  margin-right: 30px;
+}
+#toggle {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  z-index: 1;
+}
+.navicon {
+  position: absolute;
+  font-size: 1.6rem;
+  top: -8px;
+  right: 0;
+}
+
+main{
+    min-height: 100vh;
+    color: white;
+}
+
+main h1{
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--theme-color);
+}
+
+form button{
+    width: 130px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 40px auto;
+    transition: all 0.2s ease-in-out;
+}
+
+form input{
+    height: 40px;
+    border-radius: 10px;
+}
+
+form textarea{
+    border-radius: 10px;
+}
+
+form input:focus{
+    border: 6px solid rgb(9, 95, 19);
+    outline: 6px solid rgba(43, 214, 43,0.7);
+}
+
+form textarea:focus{
+
+    border: 6px solid rgb(9, 95, 19);
+    outline: 6px solid rgba(43, 214, 43,0.7);
+}
+
+form button:hover{
+    background-color: var(--theme-color);
+    box-shadow: 6px 6px 4px white;
+}
+.contacts{
+    width: 600px;
+    display: grid;
+    grid-template-columns: 400px;
+    /* width: 200px; */
+    justify-content: center;
+    margin: 6rem auto;
+    gap: 10px;
+    border: 3px solid white;
+    padding: 5rem;
+    border-radius: 20px;
+}
+
+
+footer {
+  background-color: rgb(16, 128, 16);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.footername {
+  font-family: Arizonia;
+}
+footer .socialmedi a img {
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  nav .navdetails {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: black;
+    display: none;
+  }
+  li:nth-child(4) {
+    margin-bottom: 20px;
+  }
+  .icon {
+    display: block;
+  }
+  section:has(#toggle:checked) + .navdetails {
+    display: flex;
+  }
+  main{
+    flex-direction: column;
+    
+    width: 0%;
+  }
+  
+}

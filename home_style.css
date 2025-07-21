@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+:root {
+  --text-color: white;
+  --theme-color: rgb(87 219 161);
+}
+
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  top: 0;
+  position: sticky;
+  border-bottom: 2px solid white;
+  z-index: 1;
+}
+
+nav .name {
+  font-size: xX-large;
+  margin-left: 20px;
+  font-family: Arizonia;
+}
+
+.name span {
+  color: var(--theme-color);
+}
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a:hover {
+  background-color: var(--theme-color);
+  color: black;
+}
+
+nav ul li .home{
+    background-color: var(--theme-color);
+    color: black;
+}
+
+nav ul li a {
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+nav .navdetails {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.icon {
+  display: flex;
+  position: relative;
+  display: none;
+
+  margin-right: 30px;
+}
+#toggle {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  z-index: 1;
+}
+.navicon {
+  position: absolute;
+  font-size: 1.6rem;
+  top: -8px;
+  right: 0;
+}
+
+
+main {
+  width: 100vw;
+  min-height: 80vh;
+  flex: 4;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+main .about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  min-width: 100px;
+  font-size: 1.2rem;
+  padding: 30px;
+}
+
+.about h1 {
+  color: var(--theme-color);
+  font-size: 2rem;
+  width: 100%;
+  max-width: 250px;
+}
+.about h2 .span_name {
+  color: var(--theme-color);
+}
+
+.about h2 .slash {
+  color: white;
+  opacity: 0;
+  animation: slash 0.3s linear 0s infinite alternate;
+}
+
+main .profile img {
+  width: 400px;
+  filter: grayscale();
+  z-index: -2;
+  
+}
+main .profile {
+  height: 450px;
+  background-color: rgb(79, 79, 79, 0.5);
+  align-content: center;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  z-index: -1;
+}
+
+@keyframes slash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+main .circleimg{
+    position: absolute;
+    top:73px;
+    right: 70px;
+    /* width: 70px; */
+    animation: circle 3s linear 0s infinite both ;
+}
+
+/* I try this to make the resposive. it make takes more time to do this so just i fix this for only desktop mode  */
+@keyframes circle{ 
+    0%{
+        transform: rotateZ(0deg)
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+footer {
+  background-color: rgb(16, 128, 16);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.footername {
+  font-family: Arizonia;
+}
+footer .socialmedi a img {
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  nav .navdetails {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: black;
+    display: none;
+  }
+  li:nth-child(4) {
+    margin-bottom: 20px;
+  }
+  .icon {
+    display: block;
+  }
+  section:has(#toggle:checked) + .navdetails {
+    display: flex;
+  }
+  main {
+    flex-direction: column;
+  }
+  .profile {
+    order: -1;
+  }
+  main .profile img {
+    width: 200px;
+  }
+  main .profile {
+    margin-top: 60px;
+    height: 250px;
+    background-color: rgb(79, 79, 79, 0.5);
+    align-content: center;
+  }
+  main .circleimg{
+    right: 0;
+  }
+  
+}
